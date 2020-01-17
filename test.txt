@@ -1,0 +1,3 @@
+\mnt\c\darknet\custom\data\000006.jpg
+\mnt\c\darknet\custom\data\000012.jpg
+\mnt\c\darknet\custom\data\PartB_01898.jpg
