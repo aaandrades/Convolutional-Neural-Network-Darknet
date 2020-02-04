@@ -73,3 +73,12 @@ comentar las lineas 5, 6 y 7 y recompilar el script.
 - Si el modelo falla en la lectura de los labels, copiar los labels en la misma carpeta que las imágenes: en la carpeta data/images.
 
 
+## Steps to training
+ - Hay que tomar el dataset y etiquetarlo con LabelIMG: Se puede obtener de acá: https://github.com/tzutalin/labelImg, se modifica el archivo dentro de la carpeta Data/ y en el .txt se agregan las clases para la etiquetada.
+ - Luego de etiquetar todos los datos se guardan en una carpeta denominada datasets.
+ - Se crea una carpeta llamada Custom y dentro irán los archivos:
+    1) Object.names: (es el archivo con todas las clases creadas)
+    2) test.txt y train.txt que son creados por el script para particionar la información entre Train y Test.
+    3) Trainer.data: incluye la información de las clases, directorios y backup.
+    4) Archivo de configuración (.cfg) se modifica solo la línea de la clase [convolutional] antes de [Yolo], donde dice filters=255 por        (5+n)*3, donde n es la cantidad de clases, ese mismo n se agrega en la línea de classes en [yolo]
+ - Terminado el proceso, se ejecuta la red para entrenar. 
