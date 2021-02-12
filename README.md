@@ -1,5 +1,5 @@
 # TUTORIAL PARA INSTALACIÓN DARKNET - FRAMEWORK DE RED NEURONAL PARA EJECTURAR YOLO V3. (WINDOWS 10) 
-### Andrés Alexander Andrade - Machine Learning Engineer, Cadastral and Geomatic Engineer and Master in Geographic Information Systems with formation in data science and processing and analising spatial data. (Bog, Colombia).
+### Andrés Alexander Andrade - Fullstack Developer. (Bog, Colombia).
 
 La instalación de la red Darknet usualmente es compleja y conlleva varios desmanes si no es realizada de la forma correcta en un ambiente de desarrollo complejo o bien estructurado no funcionará correctamente (o ni siquiera funcionará). Inicialmente fue desarrollada para Linux, por lo tanto su adaptación puede variar respecto a la distribución del sistema operativo.
 
