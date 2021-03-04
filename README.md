@@ -39,7 +39,7 @@ Anaconda 3
   - Scripts del Tutorial: https://github.com/spmallick/learnopencv/tree/master/InstallScripts/Windows-3
 
 ## Train
-Para el entrenamiento del modelo se puede seguir el siguiente tutorial: http://emaraic.com/blog/yolov3-custom-object-detector, realmente es el mismo proceso en todos los tutoriales encontrados, cambia es el programa de etiquetado de las imágenes.
+To train the model you can follow this tutorial: http://emaraic.com/blog/yolov3-custom-object-detector, it uses all of the important concepts!.
 
 ## Issues
 - If there's problem with Dlib use:
