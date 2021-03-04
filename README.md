@@ -1,43 +1,25 @@
-# TUTORIAL PARA INSTALACIÓN DARKNET - FRAMEWORK DE RED NEURONAL PARA EJECTURAR YOLO V3. (WINDOWS 10) 
-### Andrés Alexander Andrade - Fullstack Developer. (Bog, Colombia).
+## Realtime object detector with Deep Learning
 
-La instalación de la red Darknet usualmente es compleja y conlleva varios desmanes si no es realizada de la forma correcta en un ambiente de desarrollo complejo o bien estructurado no funcionará correctamente (o ni siquiera funcionará). Inicialmente fue desarrollada para Linux, por lo tanto su adaptación puede variar respecto a la distribución del sistema operativo.
+The installation of the Darknet network is usually complex and entails several excesses if it is not carried out in the correct way in a complex or well structured development environment it will not work correctly (or will not even work). Initially it was developed for Linux, therefore its adaptation may vary with respect to the distribution of the operating system.
 
-Existe una red adaptada para Windows que se puede acceder directamente desde acá: https://github.com/AlexeyAB/darknet
-
-A continuación presento varias rutas de aprendizaje las cuales sugiero sean evaluadas. Personalmente realicé los test con todas pero las más acertiva es la primera opción, por ser de tipo nativo en Windows además de que sus frameworks son también de distribución "original". Indispensable seguir el orden de la realización de cada paso.
+Below I present several learning paths which I suggest be evaluated. Personally, I carried out the tests with all of them, but the most successful is the first option, as it is native in Windows, as well as the fact that its frameworks are also of "original" distribution. It is essential to follow the order in which each step is carried out.
 
 Compiling with:
 openCv 3.3.
 Python 3.6
 Anaconda 3
 
-### Ruta 1
-https://medium.com/@acg.95.mx/yolo-compilar-darknet-desde-windows-subsystem-for-linux-563e72d34974 - Instalar en windows a traves de un Gestor de Ubuntu 18.04 LTS. (Nivel de dificultad: Bajo).
-
-### Ruta 2
-https://kezunlin.me/post/a5c428f1/ - Instalar en Windows (Nivel de dificultad: Alto).
-
-### Ruta 3
-https://medium.com/analytics-vidhya/installing-darknet-on-windows-462d84840e5a - Instalar Windows con una muy buena explicación. (Nivel de dificultad: Alto).
-
-### Ruta 4
-https://medium.com/@oxanderv/instalando-y-entrenando-yolo-en-windows10-con-darkflow-6181166ee2ab - Instalación más sencilla. (Nivel de dificultad: Medio).
-
-### Ruta 5
-https://www.youtube.com/watch?v=7PX_H00V6RA&t=97s - Instalación a traves de paquetes externos que simulan comandos Linux. (Nivel de dificultad: Bajo).
-
-### Ruta 6
-https://medium.com/@oxanderv/instalando-y-entrenando-yolo-en-windows10-con-darkflow-6181166ee2ab - Tutorial bastante completo. (Nivel de dificultad: Alto).
-
-### Ruta 7
-https://mc.ai/installing-darknet-on-windows/ - Tutorial bastante complejo pero muy completo y directo al punto. (Nivel de dificultad: Alto).
+### Some Tutoriales to install
+- https://medium.com/@acg.95.mx/yolo-compilar-darknet-desde-windows-subsystem-for-linux-563e72d34974 
+- https://kezunlin.me/post/a5c428f1/
+- https://medium.com/analytics-vidhya/installing-darknet-on-windows-462d84840e5a 
+- https://medium.com/@oxanderv/instalando-y-entrenando-yolo-en-windows10-con-darkflow-6181166ee2ab 
+- https://www.youtube.com/watch?v=7PX_H00V6RA&t=97s 
+- https://medium.com/@oxanderv/instalando-y-entrenando-yolo-en-windows10-con-darkflow-6181166ee2ab 
+- https://mc.ai/installing-darknet-on-windows/ 
 
 
-
-## Instalaciones Necesarias
-
-Deben ser llevadas a cabo en este orden específco
+## Necessary dependencies
 
 - Python 3.6
 
@@ -59,26 +41,30 @@ Deben ser llevadas a cabo en este orden específco
 ## Train
 Para el entrenamiento del modelo se puede seguir el siguiente tutorial: http://emaraic.com/blog/yolov3-custom-object-detector, realmente es el mismo proceso en todos los tutoriales encontrados, cambia es el programa de etiquetado de las imágenes.
 
-
 ## Issues
-- Si hay problema con Dlib ejecutar el siguiente comando:
+- If there's problem with Dlib use:
 
   ```
     pip install https://pypi.python.org/packages/da/06/bd3e241c4eb0a662914b3b4875fc52dd176a9db0d4a2c915ac2ad8800e9e/dlib-19.7.0-cp36-cp36m-win_amd64.whl#md5=b7330a5b2d46420343fbed5df69e6a3f
   ```
 
-- Si aparece error: (-215:Assertion failed) separator_index < line.size() in function 'ReadDarknetFromCfgStream' 
-comentar las lineas 5, 6 y 7 y recompilar el script.
-
-- Si el modelo falla en la lectura de los labels, copiar los labels en la misma carpeta que las imágenes: en la carpeta data/images.
-
+- If error: (-215:Assertion failed) separator_index < line.size() in function 'ReadDarknetFromCfgStream' 
+comment the lines 5, 6 y 7 and run the script.
 
 ## Steps to training
- - Hay que tomar el dataset y etiquetarlo con LabelIMG: Se puede obtener de acá: https://github.com/tzutalin/labelImg, se modifica el archivo dentro de la carpeta Data/ y en el .txt se agregan las clases para la etiquetada.
- - Luego de etiquetar todos los datos se guardan en una carpeta denominada datasets.
- - Se crea una carpeta llamada Custom y dentro irán los archivos:
-    1) Object.names: (es el archivo con todas las clases creadas)
-    2) test.txt y train.txt que son creados por el script para particionar la información entre Train y Test.
-    3) Trainer.data: incluye la información de las clases, directorios y backup.
-    4) Archivo de configuración (.cfg) se modifica solo la línea de la clase [convolutional] antes de [Yolo], donde dice filters=255 por        (5+n)*3, donde n es la cantidad de clases, ese mismo n se agrega en la línea de classes en [yolo]
- - Terminado el proceso, se ejecuta la red para entrenar. 
+ - You have to take the dataset and label it with LabelIMG: It can be obtained from here: https://github.com/tzutalin/labelImg, modify the file inside of the folder Data/, and the .txt file with the class for labeling.
+ - Then, you will save the data inside a folder called 'datasets'.
+ - Create a folder called Custom with:
+    1) Object.names: (The file with class created)
+    2) test.txt y train.txt are created by the script to particionate the information between train and test.
+    3) Trainer.data: include the information of classes, directory and backup.
+    4) Config file (.cfg) modify just the line of the class [convolutional] before of [Yolo], it says filters=255 for (5+n)*3, where n it's the amount of classes, the same  n add in the line Classes before [yolo]
+ - When you finish, just run the Red!.
+
+### Demostration
+
+https://youtu.be/3sgcgpfd4e4 (I'm the boy of the Helmet)
+
+If you want to contribute to improve the app, please create your PR and write me :alien: . After it, sit down and take a beer, you deserve it! :beers:
+*This project is for academic purposes only, all right reserved. Andrés Andrade 2021 :copyright::registered:*
+
