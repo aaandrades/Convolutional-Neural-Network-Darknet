@@ -1,6 +1,6 @@
-## Realtime object detector with Deep Learning
+### Realtime object detector with Deep Learning
 
-The installation of the Darknet network is usually complex and entails several excesses if it is not carried out in the correct way in a complex or well structured development environment it will not work correctly (or will not even work). Initially it was developed for Linux, therefore its adaptation may vary with respect to the distribution of the operating system.
+The installation of the Darknet network is usually complex and entails several problems if it is not carried out in the correct way in a complex or well structured development environment it will not work correctly (or will not even work). Initially it was developed for Linux, therefore its adaptation may vary with respect to the distribution of the operating system.
 
 Below I present several learning paths which I suggest be evaluated. Personally, I carried out the tests with all of them, but the most successful is the first option, as it is native in Windows, as well as the fact that its frameworks are also of "original" distribution. It is essential to follow the order in which each step is carried out.
 
@@ -19,31 +19,21 @@ Anaconda 3
 - https://mc.ai/installing-darknet-on-windows/ 
 
 
-## Necessary dependencies
+### Necessary dependencies
 
 - Python 3.6
-
 - CMake >= 3.8 for modern CUDA support: https://cmake.org/download/
-
 - CUDA 10.0: https://developer.nvidia.com/cuda-toolkit-archive
-
-- CuDNN: https://developer.nvidia.com/rdp/cudnn-download 
-
-  - Cuenta: aaandrades
-  
-  - Password: (You know)
-  
+- CuDNN: https://developer.nvidia.com/rdp/cudnn-download   
 - Git project of Darknet: https://github.com/AlexeyAB/darknet
+- Opencv 3.4.4: Follow step by step the next article, he's the CEO of OpenCV: https://www.learnopencv.com/install-opencv-3-4-4-on-windows/
+  - scripts: https://github.com/spmallick/learnopencv/tree/master/InstallScripts/Windows-3
 
-- Opencv 3.4.4: Seguirlo completamente, es elaborado por el CEO de OpenCV: https://www.learnopencv.com/install-opencv-3-4-4-on-windows/
-  - Scripts del Tutorial: https://github.com/spmallick/learnopencv/tree/master/InstallScripts/Windows-3
-
-## Train
+#### Train
 To train the model you can follow this tutorial: http://emaraic.com/blog/yolov3-custom-object-detector, it uses all of the important concepts!.
 
-## Issues
+#### Issues
 - If there's problem with Dlib use:
-
   ```
     pip install https://pypi.python.org/packages/da/06/bd3e241c4eb0a662914b3b4875fc52dd176a9db0d4a2c915ac2ad8800e9e/dlib-19.7.0-cp36-cp36m-win_amd64.whl#md5=b7330a5b2d46420343fbed5df69e6a3f
   ```
@@ -51,7 +41,7 @@ To train the model you can follow this tutorial: http://emaraic.com/blog/yolov3-
 - If error: (-215:Assertion failed) separator_index < line.size() in function 'ReadDarknetFromCfgStream' 
 comment the lines 5, 6 y 7 and run the script.
 
-## Steps to training
+### Steps to training
  - You have to take the dataset and label it with LabelIMG: It can be obtained from here: https://github.com/tzutalin/labelImg, modify the file inside of the folder Data/, and the .txt file with the class for labeling.
  - Then, you will save the data inside a folder called 'datasets'.
  - Create a folder called Custom with:
